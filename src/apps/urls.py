@@ -1,16 +1,18 @@
 from django.urls import path
 
 from .views import (
-    app_list_view,
-    app_create_view,
-    app_delete_view,
-    dynamic_look_view
+    AppListView,
+    AppsView,
+    AppCreateView,
+    AppUpdateView,
+    AppDeleteView
 )
 
 app_name = 'apps'
 urlpatterns = [
-    path('', app_list_view, name='app-list'),
-    path('<int:id>/', dynamic_look_view, name='app-detail'),
-    path('<int:id>/delete/', app_delete_view, name='app-delete'),
-    path('create/', app_create_view, name='app-create'),
+    path('', AppListView.as_view(), name='apps-list'),
+    path('<int:id>/', AppsView.as_view(), name='apps-detail'),
+    path('<int:id>/delete/', AppDeleteView.as_view(), name='apps-delete'),
+    path('<int:id>/update/', AppUpdateView.as_view(), name='apps-update'),
+    path('create/', AppCreateView.as_view(), name='apps-create'),
 ]
