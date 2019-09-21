@@ -4,6 +4,7 @@ from django.urls import path, include
 from pages.views import home_view, about_view, contact_view
 
 urlpatterns = [
+    path('blog/', include('blog.urls')), # import include
     path('apps/', include('apps.urls')), # import include
     path('', home_view, name='home'),
     path('about/', about_view, name='about'),
