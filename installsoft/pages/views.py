@@ -1,8 +1,11 @@
 from django.shortcuts import render
 
 def home_view(request, *args, **kwargs):
-    return render(request, "home.html", {})
+    context = {}
+    return render(request, "home.html", context)
 def about_view(request, *args, **kwargs):
-    return render(request, "about.html", {})
+    context = {}
+    return render(request, "about.html", context)
 def contact_view(request, *args, **kwargs):
-    return render(request, "contact.html", {})
+    context = {}
+    return render(request, "contact.html", context)
